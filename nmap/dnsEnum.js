@@ -27,9 +27,10 @@ module.exports = (domain, params) => {
         });
     };
 
-    self.kill = () => {
+    self.kill = (callback) => {
         process.stdin.pause();
         process.kill();
+        callback(api);
     };
 
     self.onProcess = (callback) => {
